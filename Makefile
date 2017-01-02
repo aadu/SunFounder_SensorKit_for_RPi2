@@ -12,3 +12,12 @@ ls-files:
 sync:
 	rsync -avzh -e "ssh -i ${HOME}/.ssh/id_rsa" --progress \
 	../sensorkit pi:/home/pi
+
+install:
+	rsync -avzh -e "ssh -i ${HOME}/.ssh/id_rsa" --progress \
+	config/ pi:/home/pi/.jupyter
+
+
+# sudo apt-get update && sudo apt-get install tmux
+# tmux new -s jupyter
+# jupyter notebook
