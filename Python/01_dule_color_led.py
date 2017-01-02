@@ -10,8 +10,8 @@ GPIO.setmode(GPIO.BOARD)  # Numbers GPIOs by physical location
 GPIO.setup(pins, GPIO.OUT)  # Set pins' mode is output
 GPIO.output(pins, GPIO.LOW)  # Set pins to LOW(0V) to off led
 
-p_R = GPIO.PWM(pins[0], 2000)  # set Frequece to 2KHz
-p_G = GPIO.PWM(pins[1], 2000)
+p_R = GPIO.PWM(pins[0], 1000)  # set Frequece to 2KHz
+p_G = GPIO.PWM(pins[1], 1000)
 
 p_R.start(0)  # Initial duty Cycle = 0(leds off)
 p_G.start(0)
@@ -32,11 +32,31 @@ def setColor(col):  # For example : col = 0x1122
     p_G.ChangeDutyCycle(G_val)
 
 
+def setRedGreenColor(R_val):
+    G_val = 255 - R_val
+    R_val = map(R_val, 0, 255, 0, 100)
+    G_val = map(G_val, 0, 255, 0, 100)
+    p_R.ChangeDutyCycle(R_val)  # Change duty cycle
+    p_G.ChangeDutyCycle(G_val)
+
+
 def loop():
     while True:
         for col in colors:
             setColor(col)
             time.sleep(0.5)
+
+
+def loop2():
+    colors = list(range(0, 256))
+    sleep_for = 0.01
+    while True:
+        for i in colors:
+            setRedGreenColor(i)
+            time.sleep(sleep_for)
+        for i in colors[::-1]:
+            setRedGreenColor(i)
+            time.sleep(sleep_for)
 
 
 def destroy():
@@ -48,6 +68,6 @@ def destroy():
 
 if __name__ == "__main__":
     try:
-        loop()
-    except KeyboardInterrupt:
+        loop2()
+    except:
         destroy()
