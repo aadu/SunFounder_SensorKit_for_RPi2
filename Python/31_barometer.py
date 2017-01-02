@@ -14,30 +14,35 @@
 #			SDA ----------------- SDA1
 #
 #---------------------------------------------------------
-import Adafruit_BMP.BMP085 as BMP085
 import time
 
+import Adafruit_BMP.BMP085 as BMP085
+
+
 def setup():
-	print '\n Barometer begins...'
+    print '\n Barometer begins...'
+
 
 def loop():
-	while True:
-		sensor = BMP085.BMP085()
-		temp = sensor.read_temperature()	# Read temperature to veriable temp
-		pressure = sensor.read_pressure()	# Read pressure to veriable pressure
+    while True:
+        sensor = BMP085.BMP085()
+        temp = sensor.read_temperature()  # Read temperature to veriable temp
+        pressure = sensor.read_pressure()  # Read pressure to veriable pressure
 
-		print ''
-		print '      Temperature = {0:0.2f} C'.format(temp)		# Print temperature
-		print '      Pressure = {0:0.2f} Pa'.format(pressure)	# Print pressure
-		time.sleep(1)			
-		print ''
+        print ''
+        print '      Temperature = {0:0.2f} C'.format(temp)  # Print temperature
+        print '      Pressure = {0:0.2f} Pa'.format(pressure)  # Print pressure
+        time.sleep(1)
+        print ''
+
 
 def destory():
-	GPIO.cleanup()				# Release resource
+    GPIO.cleanup()  # Release resource
 
-if __name__ == '__main__':		# Program start from here
-	setup()
-	try:
-		loop()
-	except KeyboardInterrupt:  	# When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
-		destory()
+
+if __name__ == '__main__':  # Program start from here
+    setup()
+    try:
+        loop()
+    except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
+        destory()
