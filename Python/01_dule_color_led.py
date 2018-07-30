@@ -25,8 +25,8 @@ def setColor(col):  # For example : col = 0x1122
     R_val = col >> 8
     G_val = col & 0x00FF
 
-    R_val = map(R_val, 0, 255, 0, 100)
-    G_val = map(G_val, 0, 255, 0, 100)
+    R_val = list(map(R_val, 0, 255, 0, 100))
+    G_val = list(map(G_val, 0, 255, 0, 100))
 
     p_R.ChangeDutyCycle(R_val)  # Change duty cycle
     p_G.ChangeDutyCycle(G_val)
@@ -34,8 +34,8 @@ def setColor(col):  # For example : col = 0x1122
 
 def setRedGreenColor(R_val):
     G_val = 255 - R_val
-    R_val = map(R_val, 0, 255, 0, 100)
-    G_val = map(G_val, 0, 255, 0, 100)
+    R_val = list(map(R_val, 0, 255, 0, 100))
+    G_val = list(map(G_val, 0, 255, 0, 100))
     p_R.ChangeDutyCycle(R_val)  # Change duty cycle
     p_G.ChangeDutyCycle(G_val)
 

@@ -32,14 +32,14 @@ def Print(x):
     global tmp
     if x != tmp:
         if x == 0:
-            print '    **********'
-            print '    *     ON *'
-            print '    **********'
+            print('    **********')
+            print('    *     ON *')
+            print('    **********')
 
         if x == 1:
-            print '    **********'
-            print '    * OFF    *'
-            print '    **********'
+            print('    **********')
+            print('    * OFF    *')
+            print('    **********')
         tmp = x
 
 

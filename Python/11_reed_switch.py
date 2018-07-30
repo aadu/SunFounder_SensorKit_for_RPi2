@@ -27,9 +27,9 @@ def Led(x):
 
 def Print(x):
     if x == 0:
-        print '    ***********************************'
-        print '    *   Detected Magnetic Material!   *'
-        print '    ***********************************'
+        print('    ***********************************')
+        print('    *   Detected Magnetic Material!   *')
+        print('    ***********************************')
 
 
 def detect(chn):

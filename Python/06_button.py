@@ -25,9 +25,9 @@ def Led(x):
 
 def Print(x):
     if x == 0:
-        print '    ***********************'
-        print '    *   Button Pressed!   *'
-        print '    ***********************'
+        print('    ***********************')
+        print('    *   Button Pressed!   *')
+        print('    ***********************')
 
 
 def detect(chn):

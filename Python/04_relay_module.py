@@ -14,10 +14,10 @@ def setup():
 
 def loop():
     while True:
-        print '...relayd on'
+        print('...relayd on')
         GPIO.output(RelayPin, GPIO.LOW)
         time.sleep(0.5)
-        print 'relay off...'
+        print('relay off...')
         GPIO.output(RelayPin, GPIO.HIGH)
         time.sleep(0.5)
 

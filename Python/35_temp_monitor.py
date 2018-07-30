@@ -52,9 +52,9 @@ def loop():
     while True:
         edge()
         temp = ds18b20.read()
-        print 'The lower limit of temperature : ', lowl
-        print 'The upper limit of temperature : ', highl
-        print 'Current temperature : ', temp
+        print('The lower limit of temperature : ', lowl)
+        print('The upper limit of temperature : ', highl)
+        print('Current temperature : ', temp)
         if float(temp) < float(lowl):
             rgb.setColor(color['Blue'])
             for i in range(0, 3):

@@ -51,7 +51,7 @@ def loop():
     while True:
         rotaryDeal()
         if tmp != globalCounter:
-            print 'globalCounter = %d' % globalCounter
+            print('globalCounter = %d' % globalCounter)
             tmp = globalCounter
 
 

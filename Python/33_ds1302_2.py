@@ -24,29 +24,29 @@ rtc = rpi_time.DS1302()
 
 
 def setup():
-    print ''
-    print ''
-    print rtc.get_datetime()
-    print ''
-    print ''
-    a = raw_input("Do you want to setup date and time?(y/n) ")
+    print('')
+    print('')
+    print(rtc.get_datetime())
+    print('')
+    print('')
+    a = input("Do you want to setup date and time?(y/n) ")
     if a == 'y' or a == 'Y':
-        date = raw_input("Input date:(YYYY MM DD) ")
-        time = raw_input("Input time:(HH MM SS) ")
+        date = input("Input date:(YYYY MM DD) ")
+        time = input("Input time:(HH MM SS) ")
         date = date.split()
         time = time.split()
-        print ''
-        print ''
+        print('')
+        print('')
         ds1302.set_date(int(date[0]), int(date[1]), int(date[2]))
         ds1302.set_time(int(time[0]), int(time[1]), int(time[2]))
         dt = rtc.get_datetime()
-        print "You set the date and time to:", dt
+        print("You set the date and time to:", dt)
 
 
 def loop():
     while True:
         a = rtc.get_datetime()
-        print a
+        print(a)
         time.sleep(0.5)
 
 

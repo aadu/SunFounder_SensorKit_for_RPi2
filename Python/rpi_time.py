@@ -22,19 +22,19 @@ class DS1302:
             if year < 2000 or year > 3000:
                 ds1302.set_date(2000, month, date)
                 return self.get_datetime()
-            if month not in range(1, 13):
+            if month not in list(range(1, 13)):
                 ds1302.set_date(year, 1, date)
                 return self.get_datetime()
-            if date not in range(1, 32):
+            if date not in list(range(1, 32)):
                 ds1302.set_date(year, month, 1)
                 return self.get_datetime()
-            if hour not in range(0, 24):
+            if hour not in list(range(0, 24)):
                 ds1302.set_time(0, minute, second)
                 return self.get_datetime()
-            if minute not in range(0, 60):
+            if minute not in list(range(0, 60)):
                 ds1302.set_time(hour, 0, second)
                 return self.get_datetime()
-            if second not in range(0, 60):
+            if second not in list(range(0, 60)):
                 ds1302.set_time(hour, minute, 0)
                 return self.get_datetime()
         return datetime(year, month, date, hour, minute, second)

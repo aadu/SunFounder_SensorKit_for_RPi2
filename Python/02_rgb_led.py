@@ -6,7 +6,7 @@ from itertools import tee
 import RPi.GPIO as GPIO
 
 try:
-    from itertools import izip
+    
 except ImportError:
     izip = zip
 
@@ -30,7 +30,7 @@ def pairwise(iterable):
     "s -> (s0,s1), (s1,s2), (s2, s3), ..."
     a, b = tee(iterable)
     next(b, None)
-    return izip(a, b)
+    return zip(a, b)
 
 
 def setup(Rpin, Gpin, Bpin):
@@ -74,12 +74,12 @@ def _set_color(r, g, b):
 
 
 def setColor(col):  # For example : col = 0x112233
-    _set_color(*[map(c, 0, 255, 0, 100) for c in hex_to_rgb(col)])
+    _set_color(*[list(map(c, 0, 255, 0, 100)) for c in hex_to_rgb(col)])
 
 
 def fade_to_color(color, new_color):
-    color = [map(c, 0, 255, 0, 100) for c in hex_to_rgb(color)]
-    new_color = [map(c, 0, 255, 0, 100) for c in hex_to_rgb(new_color)]
+    color = [list(map(c, 0, 255, 0, 100)) for c in hex_to_rgb(color)]
+    new_color = [list(map(c, 0, 255, 0, 100)) for c in hex_to_rgb(new_color)]
     while color != new_color:
         for i, col in enumerate(new_color):
             if color[i] > col:
@@ -100,7 +100,7 @@ def loop():
 def loop2():
     while True:
         for old, new in random_color():
-            print("{} => {}".format(hex(old), hex(new)))
+            print(("{} => {}".format(hex(old), hex(new))))
             fade_to_color(old, new)
             time.sleep(.2)
 

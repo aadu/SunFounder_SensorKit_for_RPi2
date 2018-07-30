@@ -13,7 +13,7 @@ def setup():
 def cnt(ev=None):
     global count
     count += 1
-    print 'Received infrared. cnt = ', count
+    print('Received infrared. cnt = ', count)
 
 
 def loop():

@@ -20,7 +20,7 @@ import Adafruit_BMP.BMP085 as BMP085
 
 
 def setup():
-    print '\n Barometer begins...'
+    print('\n Barometer begins...')
 
 
 def loop():
@@ -29,11 +29,11 @@ def loop():
         temp = sensor.read_temperature()  # Read temperature to veriable temp
         pressure = sensor.read_pressure()  # Read pressure to veriable pressure
 
-        print ''
-        print '      Temperature = {0:0.2f} C'.format(temp)  # Print temperature
-        print '      Pressure = {0:0.2f} Pa'.format(pressure)  # Print pressure
+        print('')
+        print('      Temperature = {0:0.2f} C'.format(temp))  # Print temperature
+        print('      Pressure = {0:0.2f} Pa'.format(pressure))  # Print pressure
         time.sleep(1)
-        print ''
+        print('')
 
 
 def destory():

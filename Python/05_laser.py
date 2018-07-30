@@ -19,10 +19,10 @@ def setup():
 
 def loop():
     while True:
-        print '...Laser on'
+        print('...Laser on')
         GPIO.output(LedPin, GPIO.LOW)  # led on
         time.sleep(0.5)
-        print 'Laser off...'
+        print('Laser off...')
         GPIO.output(LedPin, GPIO.HIGH)  # led off
         time.sleep(0.5)
 

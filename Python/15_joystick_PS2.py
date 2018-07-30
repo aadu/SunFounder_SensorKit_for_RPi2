@@ -48,7 +48,7 @@ def loop():
     while True:
         tmp = direction()
         if tmp != None and tmp != status:
-            print tmp
+            print(tmp)
             status = tmp
 
 

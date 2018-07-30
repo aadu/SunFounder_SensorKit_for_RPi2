@@ -16,23 +16,23 @@ def setup():
 
 def Print(x):
     if x == 1:
-        print ''
-        print '   *********'
-        print '   * Safe~ *'
-        print '   *********'
-        print ''
+        print('')
+        print('   *********')
+        print('   * Safe~ *')
+        print('   *********')
+        print('')
     if x == 0:
-        print ''
-        print '   *********'
-        print '   * Fire! *'
-        print '   *********'
-        print ''
+        print('')
+        print('   *********')
+        print('   * Fire! *')
+        print('   *********')
+        print('')
 
 
 def loop():
     status = 1
     while True:
-        print ADC.read(0)
+        print(ADC.read(0))
 
         tmp = GPIO.input(DO)
         if tmp != status:

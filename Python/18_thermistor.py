@@ -16,17 +16,17 @@ def setup():
 
 def Print(x):
     if x == 1:
-        print ''
-        print '***********'
-        print '* Better~ *'
-        print '***********'
-        print ''
+        print('')
+        print('***********')
+        print('* Better~ *')
+        print('***********')
+        print('')
     if x == 0:
-        print ''
-        print '************'
-        print '* Too Hot! *'
-        print '************'
-        print ''
+        print('')
+        print('************')
+        print('* Too Hot! *')
+        print('************')
+        print('')
 
 
 def loop():
@@ -38,7 +38,7 @@ def loop():
         Rt = 10000 * Vr / (5 - Vr)
         temp = 1 / (((math.log(Rt / 10000)) / 3950) + (1 / (273.15 + 25)))
         temp = temp - 273.15
-        print 'temperature = ', temp, 'C'
+        print('temperature = ', temp, 'C')
 
         # For a threshold, uncomment one of the code for
         # which module you use. DONOT UNCOMMENT BOTH!

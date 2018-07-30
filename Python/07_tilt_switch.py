@@ -27,9 +27,9 @@ def Led(x):
 
 def Print(x):
     if x == 0:
-        print '    *************'
-        print '    *   Tilt!   *'
-        print '    *************'
+        print('    *************')
+        print('    *   Tilt!   *')
+        print('    *************')
 
 
 def detect(chn):

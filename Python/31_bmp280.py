@@ -134,35 +134,35 @@ class BMP280:
             )
 
         if self._DEBUG:
-            print self._DEBUG_INFO, 'Get i2c bus number %d' % bus_number
+            print(self._DEBUG_INFO, 'Get i2c bus number %d' % bus_number)
         return bus_number
 
     def _write_byte_data(self, reg, value):
         if self._DEBUG:
-            print self._DEBUG_INFO, 'Writing value %2X to %2X' % (value, reg)
+            print(self._DEBUG_INFO, 'Writing value %2X to %2X' % (value, reg))
         self.bus.write_byte_data(self.address, reg, value)
 
     def _read_byte_data(self, reg):
         if self._DEBUG:
-            print self._DEBUG_INFO, 'Reading value from %2X' % reg
+            print(self._DEBUG_INFO, 'Reading value from %2X' % reg)
         results = self.bus.read_byte_data(self.address, reg)
         return results
 
     def _read_i2c_block_data(self, reg, length):
         if self._DEBUG:
-            print self._DEBUG_INFO, 'Reading value from %2X' % reg
+            print(self._DEBUG_INFO, 'Reading value from %2X' % reg)
         results = self.bus.read_i2c_block_data(self.address, reg, length)
         return results
 
     def _read_word_data_unsigned(self, reg):
         if self._DEBUG:
-            print self._DEBUG_INFO, 'Reading value from %2X' % reg
+            print(self._DEBUG_INFO, 'Reading value from %2X' % reg)
         results = self.bus.read_word_data(self.address, reg)
         return results
 
     def _read_word_data_signed(self, reg):
         if self._DEBUG:
-            print self._DEBUG_INFO, 'Reading value from %2X' % reg
+            print(self._DEBUG_INFO, 'Reading value from %2X' % reg)
         results = self.bus.read_word_data(self.address, reg)
         if results > 32767:
             results -= 65536
@@ -244,13 +244,13 @@ def main():
         bmp.reg_check()
 
         temperature, pressure = bmp.read()
-        print("Temperature : %2.2f `C" % temperature)
-        print("Pressure    : %5.4f mbar" % pressure)
-        print ""
+        print(("Temperature : %2.2f `C" % temperature))
+        print(("Pressure    : %5.4f mbar" % pressure))
+        print("")
     else:
         print("Error")
-        print("Chip ID     : %d" % chip_id)
-        print("Version     : %d" % chip_version)
+        print(("Chip ID     : %d" % chip_id))
+        print(("Version     : %d" % chip_version))
         time.sleep(1)
 
 

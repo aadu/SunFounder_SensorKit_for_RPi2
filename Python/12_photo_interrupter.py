@@ -25,9 +25,9 @@ def Led(x):
 
 def Print(x):
     if x == 1:
-        print '    *************************'
-        print '    *   Light was blocked   *'
-        print '    *************************'
+        print('    *************************')
+        print('    *   Light was blocked   *')
+        print('    *************************')
 
 
 def detect(chn):
